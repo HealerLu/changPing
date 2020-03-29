@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../../lib/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css"/>
+    <script src="../../lib/rem.js"></script>
+    <script src="../../lib/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/swiper-3.4.2.min.js"></script>
+    <script src="./js/popups.js"></script>
+    <title>我的</title>
+</head>
+<body>
+<div class="meBody">
+    <img class="touxiang" src="img/touxiang.jpg" alt=""/>
+    <div class="meName">
+        潘建辉
+    </div>
+</div>
+<div class="meItem change-password">
+    <div class="fl">
+        <div class="icon fl" style="background: url(img/mima.png) no-repeat center;background-size: 100% 100%;"></div>
+        更改密码
+    </div>
+    <div class="fr" id="xgmm">
+        <span class="icon iconfont iconarrow-right-copy-copy"></span>
+    </div>
+</div>
+<div class="meItem change-ywy">
+    <div class="fl">
+        <div class="icon fl" style="background: url(img/bgyw.png) no-repeat center;background-size: 100% 100%;"></div>
+        变更业务员
+    </div>
+    <div class="fr" id="bgywy">
+        <span class="icon iconfont iconarrow-right-copy-copy"></span>
+    </div>
+</div>
+<div class="meItem logout">
+    <div class="fl">
+        <div class="icon fl" style="background: url(img/black.png) no-repeat center;background-size: 100% 100%;"></div>
+        退出登录
+    </div>
+    <div class="fr">
+        <span class="icon iconfont iconarrow-right-copy-copy"></span>
+    </div>
+</div>
+</body>
+<script>
+    $(function () {
+        document.documentElement.style.fontSize = window.top.innerWidth / 7.5 + 'px';
+        $('.change-password').on('click', function () {
+            location.href = './newPassword.html'
+        });
+
+        var identity = localStorage.getItem("identity");
+        if (identity && identity === "1") {
+            $(".change-ywy").hide()
+        } else {
+            $(".change-ywy").show()
+        }
+
+        $('.change-ywy').on('click', function () {
+            location.href = './changeYWY/step1.html'
+        });
+        $(".logout").on("click", function (e) {
+            e.stopPropagation();
+            jqalert({
+                title: '是否确定退出登陆？',
+                content: '',
+                yestext: '确定',
+                notext: '取消',
+                yesfn: function () {
+                    jqtoast('退出成功');
+                    setTimeout(function () {
+                        window.top.location.href = "../../index.html"
+                    }, 1000)
+                },
+                nofn: function () {
+                    // jqtoast('你点击了取消');
+                }
+            })
+        })
+    })
+
+</script>
+</html>

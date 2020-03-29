@@ -1,0 +1,135 @@
+#html,
+body {
+  width: 100%;
+}
+#html #container,
+body #container {
+  background-color: #f6f6f6;
+  text-align: center;
+}
+#html #container .title,
+body #container .title {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-bottom: 0.1rem;
+}
+#html #container .title span,
+body #container .title span {
+  display: inline-block;
+  width: 3.72rem;
+  height: 0.8rem;
+  border-radius: 0.15rem;
+  background-color: #376fe1;
+  text-align: center;
+  line-height: 0.8rem;
+  color: #ffffff;
+}
+#html #container #form,
+body #container #form {
+  width: 100%;
+  background-color: #ffffff;
+}
+#html #container #form .form-item,
+body #container #form .form-item {
+  height: 1.4rem;
+  border-bottom: 1px solid #cccccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+#html #container #form .form-item label,
+body #container #form .form-item label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.3rem;
+}
+#html #container #form .form-item label span,
+body #container #form .form-item label span {
+  color: #666666;
+}
+#html #container #form .form-item label .right,
+body #container #form .form-item label .right {
+  width: 60%;
+  text-align: right;
+}
+#html #container #form .form-item label .right input,
+body #container #form .form-item label .right input {
+  color: #e5e5e5;
+  text-align: right;
+  font-size: 0.3rem;
+}
+#html #container #form .form-item label .right.choose-house,
+body #container #form .form-item label .right.choose-house {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+#html #container #form .form-item label .right.choose-house span,
+body #container #form .form-item label .right.choose-house span {
+  display: inline-block;
+  width: 1.78rem;
+  height: 0.74rem;
+  text-align: center;
+  line-height: 0.74rem;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+  border-radius: 0.1rem;
+  color: #cccccc;
+}
+#html #container #form .form-item label .right.choose-house span:nth-child(2),
+body #container #form .form-item label .right.choose-house span:nth-child(2) {
+  margin-left: 0.2rem;
+}
+#html #container #form .form-item label .right.choose-house span.checked,
+body #container #form .form-item label .right.choose-house span.checked {
+  border: 1px solid #376fe1;
+  color: #376fe1;
+}
+#html #container #form .form-item.no-require,
+body #container #form .form-item.no-require {
+  padding: 0 0.5rem;
+}
+#html #container #form .form-item.require,
+body #container #form .form-item.require {
+  padding-left: 0.3rem;
+  padding-right: 0.2rem;
+}
+#html #container #form .form-item.require .iconfont,
+body #container #form .form-item.require .iconfont {
+  font-size: 0.16rem;
+  color: red;
+  vertical-align: middle;
+}
+#html #container #form .form-item.require .right .iconfont,
+body #container #form .form-item.require .right .iconfont {
+  font-size: 0.3rem;
+  color: #e5e5e5;
+  vertical-align: middle;
+}
+#html #container #form .form-item.require .right input,
+body #container #form .form-item.require .right input {
+  color: #000000;
+}
+#html #container .sub,
+body #container .sub {
+  width: 100%;
+  background-color: #fff;
+}
+#html #container .sub #next,
+body #container .sub #next {
+  height: 1.2rem;
+  width: 5rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(to right, #1c6feb, #5b99f5);
+  font-size: 0.34rem;
+  color: #ffffff;
+  margin: 0.2rem 0;
+}
+/*# sourceMappingURL=step2.css.map */

@@ -1,0 +1,322 @@
+#html,
+body {
+  width: 100%;
+  background-color: #f6f6f6;
+  /*遮罩层*/
+}
+#html #container,
+body #container {
+  text-align: center;
+}
+#html #container .title,
+body #container .title {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-bottom: 0.1rem;
+}
+#html #container .title span,
+body #container .title span {
+  display: inline-block;
+  width: 3.72rem;
+  height: 0.8rem;
+  border-radius: 0.15rem;
+  background-color: #376fe1;
+  text-align: center;
+  line-height: 0.8rem;
+  color: #ffffff;
+}
+#html #container .content,
+body #container .content {
+  background-color: #fff;
+}
+#html #container .content .zuhu-info .top,
+body #container .content .zuhu-info .top {
+  padding: 0 0.3rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#html #container .content .zuhu-info .top .left img,
+body #container .content .zuhu-info .top .left img {
+  width: 2.1rem;
+  height: 2.6rem;
+}
+#html #container .content .zuhu-info .top .right,
+body #container .content .zuhu-info .top .right {
+  text-align: left;
+  font-size: 0.26rem;
+  margin-top: 0.5rem;
+}
+#html #container .content .zuhu-info .top .right li,
+body #container .content .zuhu-info .top .right li {
+  line-height: 1.8;
+}
+#html #container .content .zuhu-info .top .right li span:first-child,
+body #container .content .zuhu-info .top .right li span:first-child {
+  color: #666666;
+  text-align: right;
+  width: 1.4rem;
+  display: inline-block;
+}
+#html #container .content .zuhu-info .bottom,
+body #container .content .zuhu-info .bottom {
+  box-sizing: border-box;
+  padding-left: 2.2rem;
+  font-size: 0.26rem;
+}
+#html #container .content .zuhu-info .bottom span:first-child,
+body #container .content .zuhu-info .bottom span:first-child {
+  color: #666666;
+  text-align: right;
+  width: 1.4rem;
+  display: inline-block;
+  vertical-align: top;
+}
+#html #container .content .zuhu-info .bottom span:last-child,
+body #container .content .zuhu-info .bottom span:last-child {
+  width: 3.5rem;
+  display: inline-block;
+  text-align: left;
+}
+#html #container .add,
+body #container .add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+#html #container .add .btn,
+body #container .add .btn {
+  text-align: center;
+  line-height: 1rem;
+  color: #ffffff;
+  font-size: 0.34rem;
+  width: 3.5rem;
+  height: 1rem;
+  background: linear-gradient(to right, #1c6feb, #5b99f5);
+  border-radius: 0.2rem;
+}
+#html #mask,
+body #mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+#html #mask .mask-inner,
+body #mask .mask-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+#html #mask .mask-inner .inner,
+body #mask .mask-inner .inner {
+  width: 95%;
+  height: 90%;
+  background-color: #fff;
+  overflow-y: auto;
+  /*拍摄身份证*/
+  /*填写租户信息*/
+}
+#html #mask .mask-inner .inner .close,
+body #mask .mask-inner .inner .close {
+  text-align: right;
+}
+#html #mask .mask-inner .inner #id-care-inner,
+body #mask .mask-inner .inner #id-care-inner {
+  box-sizing: border-box;
+  padding: 0 0.35rem;
+  width: 100%;
+}
+#html #mask .mask-inner .inner #id-care-inner .title,
+body #mask .mask-inner .inner #id-care-inner .title {
+  padding-top: 0.35rem;
+  font-size: 0.36rem;
+}
+#html #mask .mask-inner .inner #id-care-inner .title:before,
+body #mask .mask-inner .inner #id-care-inner .title:before {
+  content: "";
+  width: 0.08rem;
+  height: 0.4rem;
+  display: inline-block;
+  background-color: #3071e3;
+  color: #3071e3;
+  margin-right: 0.2rem;
+  vertical-align: sub;
+}
+#html #mask .mask-inner .inner #id-care-inner .upload,
+body #mask .mask-inner .inner #id-care-inner .upload {
+  width: 100%;
+  margin-top: 0.2rem;
+  height: 4.2rem;
+  border-radius: 0.4rem;
+  position: relative;
+}
+#html #mask .mask-inner .inner #id-care-inner .upload input,
+body #mask .mask-inner .inner #id-care-inner .upload input {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  opacity: 0;
+}
+#html #mask .mask-inner .inner #id-care-inner .upload img,
+body #mask .mask-inner .inner #id-care-inner .upload img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+#html #mask .mask-inner .inner #id-care-inner .tips,
+body #mask .mask-inner .inner #id-care-inner .tips {
+  color: #666666;
+  font-size: 0.26rem;
+  line-height: 1.5;
+  text-indent: 2em;
+  margin-top: 0.4rem;
+}
+#html #mask .mask-inner .inner #id-care-inner .tips span,
+body #mask .mask-inner .inner #id-care-inner .tips span {
+  color: red;
+}
+#html #mask .mask-inner .inner #id-care-inner #next,
+body #mask .mask-inner .inner #id-care-inner #next {
+  position: fixed;
+  width: 85%;
+  bottom: 0.8rem;
+  height: 1.2rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(to right, #1c6feb, #5b99f5);
+  font-size: 0.34rem;
+  color: #ffffff;
+}
+#html #mask .mask-inner .inner #zuhu-info #form,
+body #mask .mask-inner .inner #zuhu-info #form {
+  width: 100%;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .title,
+body #mask .mask-inner .inner #zuhu-info #form .title {
+  font-size: 0.38rem;
+  color: #fe554b;
+  font-weight: 700;
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+  text-align: left;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item,
+body #mask .mask-inner .inner #zuhu-info #form .form-item {
+  height: 1.4rem;
+  border-bottom: 1px solid #cccccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item label,
+body #mask .mask-inner .inner #zuhu-info #form .form-item label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.3rem;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item label span,
+body #mask .mask-inner .inner #zuhu-info #form .form-item label span {
+  color: #666666;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item label .right,
+body #mask .mask-inner .inner #zuhu-info #form .form-item label .right {
+  width: 60%;
+  text-align: right;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item label .right input,
+body #mask .mask-inner .inner #zuhu-info #form .form-item label .right input {
+  color: #e5e5e5;
+  text-align: right;
+  font-size: 0.3rem;
+  width: 85%;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.no-require,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.no-require {
+  padding: 0 0.5rem;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp {
+  height: 2.2rem;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp label,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp label {
+  justify-content: flex-start;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp .upload,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp .upload {
+  width: 1.84rem;
+  height: 1.84rem;
+  border-radius: 0.4rem;
+  position: relative;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp .upload input,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp .upload input {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  opacity: 0;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp .upload img,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.no-require.zp .upload img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.require,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.require {
+  padding-left: 0.3rem;
+  padding-right: 0.2rem;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.require .iconfont,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.require .iconfont {
+  font-size: 0.16rem;
+  color: red;
+  vertical-align: middle;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.require .right .iconfont,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.require .right .iconfont {
+  font-size: 0.3rem;
+  color: #e5e5e5;
+  vertical-align: middle;
+}
+#html #mask .mask-inner .inner #zuhu-info #form .form-item.require .right input,
+body #mask .mask-inner .inner #zuhu-info #form .form-item.require .right input {
+  color: #000000;
+}
+#html #mask .mask-inner .inner #zuhu-info #save,
+body #mask .mask-inner .inner #zuhu-info #save {
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+#html #mask .mask-inner .inner #zuhu-info #save button,
+body #mask .mask-inner .inner #zuhu-info #save button {
+  text-align: center;
+  line-height: 1rem;
+  color: #ffffff;
+  font-size: 0.34rem;
+  width: 3.5rem;
+  height: 1rem;
+  background: linear-gradient(to right, #1c6feb, #5b99f5);
+  border-radius: 2rem;
+}
+/*# sourceMappingURL=step3.css.map */

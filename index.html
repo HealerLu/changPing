@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./lib/css/reset.css">
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./lib/rem.js"></script>
+    <script src=./lib/jquery-3.4.1.min.js></script>
+    <title>登陆</title>
+</head>
+<body>
+<div id="container">
+    <ul>
+        <li>
+            <label>
+                <span><i class="iconfont iconshouji"></i>手机号</span>
+                <input id="userPhone" type="text" maxlength="11" value="13222222222">
+            </label>
+        </li>
+        <li>
+            <label>
+                <span><i class="iconfont iconmima"></i>密码</span>
+                <input id="password" type="password" value="123456">
+            </label>
+        </li>
+    </ul>
+    <button id="login">登陆</button>
+    <div id="register">
+        <span data-identity="1">房东注册</span>
+        <span data-identity="2">中介注册</span>
+    </div>
+    <!--弹窗-->
+    <div id="mask">
+        <div class="inner">
+            <img src="./lib/images/agree.png" alt="" class="close">
+        </div>
+        <img src="./lib/images/close.png" alt="" class="close">
+    </div>
+</div>
+<script>
+    /*
+    * 房东注册1
+    * 中介注册2
+    * */
+    $(function () {
+        $("#register span").on("click", function () {
+            var identity = $(this).attr("data-identity");
+            localStorage.setItem("identity", identity);
+            window.location.href = "./out/step1.html"
+        });
+        $(".close").on("click", function () {
+            $("#mask").hide()
+        });
+        $("#login").on("click", function () {
+            var userPhone = $("#userPhone").val();
+            if(userPhone === "13222222222") {
+                localStorage.setItem("identity", "1");
+                window.location.href = "./entry/index.html"
+            }else {
+                localStorage.setItem("identity", "2");
+                window.location.href = "./entry/index.html"
+            }
+        })
+
+        var identity = localStorage.getItem("identity");
+        if(identity) {
+            $("#mask").hide()
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

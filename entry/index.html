@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../lib/css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../lib/iconfont/iconfont.css">
+    <script src="../lib/rem.js"></script>
+    <script src="../lib/jquery-3.4.1.min.js"></script>
+    <title>昌平区安居通</title>
+</head>
+<body>
+<div id="container">
+    <ul class="content">
+        <li>
+            <iframe id="index-page" src="./index/index.html" frameborder="0"></iframe>
+        </li>
+        <li style="display: none;">
+            <iframe id="house-entry" src="./houseEntry/step1.html" frameborder="0"></iframe>
+        </li>
+        <li style="display: none;">
+            <iframe id="my" src="./index/wode.html" frameborder="0"></iframe>
+        </li>
+    </ul>
+    <ul class="footer">
+        <li>
+            <i class="iconfont iconai-home checked"></i>
+            <span>首页</span>
+        </li>
+        <li>
+            <i class="iconfont iconluru"></i>
+            <span>房屋录入</span>
+        </li>
+        <li>
+            <i class="iconfont iconwode"></i>
+            <span>我的</span>
+        </li>
+    </ul>
+</div>
+<script>
+    /*切换的初始化*/
+    $(function () {
+        var identity = localStorage.getItem("identity");
+        $("#container .footer li").on("click", function () {
+            var index = $(this).index();
+            $("#container .content li").eq(index).show().siblings().hide();
+            $(this).find("i").addClass("checked").next().css("color", "#000000").parent().siblings().find("i").removeClass("checked").next().css("color", "#666666")
+            if(index === 0) {
+                $("#index-page").attr("src", "./index/index.html")
+            }
+            if(index === 1) { //点击的是房屋录入
+                if(identity && identity === "1") { //房东进入
+                    $("#house-entry").attr("src", "./houseEntry/step2.html")
+                }else if(identity && identity === "2") {
+                    $("#house-entry").attr("src", "./houseEntry/step1.html")
+                }
+            }
+            if(index === 2) {
+                $("#my").attr("src", "./index/wode.html")
+            }
+        })
+    })
+</script>
+</body>
+</html>

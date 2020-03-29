@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../lib/css/reset.css">
+    <link rel="stylesheet" href="../lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../lib/mobileSelect/mobileSelect.css">
+    <link rel="stylesheet" href="./css/step3.css">
+    <script src="../lib/rem.js"></script>
+    <script src="../lib/jquery-3.4.1.min.js"></script>
+    <script src="../lib/mobileSelect/mobileSelect.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <ul id="form">
+        <li class="title hide">
+            <span>个人信息</span>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>姓名</span>
+               <div class="right">
+                   <input type="text" readonly value="张三">
+               </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>性别</span>
+                <div class="right">
+                    <input type="text" readonly value="男">
+                </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>民族</span>
+                <div class="right">
+                    <input type="text" readonly value="汉">
+                </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>身份证号</span>
+                <div class="right">
+                    <input type="text" readonly value="13010219630325045954">
+                </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>户籍地址</span>
+                <div class="right">
+                    <input type="text" readonly value="江苏省无锡市惠山区前桥镇塘泗路39号">
+                </div>
+            </label>
+        </li>
+        <li class="title hide">
+            <span>门店信息</span>
+        </li>
+        <li class="form-item require hide">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>公司名称</span>
+                <div class="right">
+                    <input id="gsmc" type="text" readonly value="请选择">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require hide" style="display: none;" id="srgsmc">
+            <label>
+                <span></span>
+                <div class="right">
+                    <input type="text" value="" placeholder="请输入公司名称">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require hide" style="border-bottom: none;">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>门店详细地址</span>
+                <span></span>
+            </label>
+        </li>
+        <li class="form-item no-require hide" style="padding-right: 0.2rem;">
+            <label>
+                <span>昌平区</span>
+                <div class="right">
+                    <input type="text" placeholder="未填写" style="color: #000000;width: 90%;">
+                    <i class="iconfont iconarrow-right-copy-copy" style="color: #e5e5e5;"></i>
+                </div>
+            </label>
+        </li>
+
+        <li class="form-item require hide">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>门店所属派出所</span>
+                <div class="right">
+                    <input id="mdshpcs" type="text" readonly value="请选择">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require hide">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>门店负责人</span>
+                <div class="right">
+                    <input type="text" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require hide">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>门店负责人手机号</span>
+                <div class="right">
+                    <input type="text" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>注册手机号</span>
+                <div class="right">
+                    <input type="text" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>注册密码</span>
+                <div class="right">
+                    <input type="password" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+    </ul>
+    <p class="tips">
+        <input type="checkbox">仔细阅读<span>《用户协议》</span>和<span>《昌平区治安责任书》</span>
+    </p>
+    <button id="next">提交</button>
+</div>
+<script>
+    $(function () {
+        var identity = localStorage.getItem("identity");
+        if(identity && identity === "1") {
+            document.title = "房东注册";
+            $(".hide").hide()
+        }else if(identity && identity === "2") {
+            document.title = "中介注册";
+        }
+        $("#next").on("click", function () {
+            window.location.href = "../index.html"
+        });
+
+
+        //公司名称
+        new MobileSelect({
+            trigger: "#gsmc",
+            wheels: [{
+                data: ["链家", "自如","我爱我家", "蛋壳公寓", "安居客", "房天下", "其他"]
+            }],
+            position: [0],
+            callback: function (index, data) {
+                $("#gsmc").val(data[0]);
+                if(index[0] === 6) {
+                    $("#srgsmc").show()
+                }else {
+                    $("#srgsmc").hide()
+                }
+            }
+        });
+        //门店所属派出所
+        new MobileSelect({
+            trigger: "#mdshpcs",
+            wheels: [{
+                data: ["昌平派出所", "七里渠派出所","史各庄派出所", "东小口派出所", "南邵派出所", "龙园派出所"]
+            }],
+            position: [0],
+            callback: function (index, data) {
+                $("#mdshpcs").val(data[0]);
+            }
+        })
+
+
+
+
+    })
+</script>
+</body>
+</html>

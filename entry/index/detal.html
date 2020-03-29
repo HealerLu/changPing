@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../lib/css/reset.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="../../lib/iconfont/iconfont.css">
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+	<link rel="stylesheet" href="../houseEntry/css/step3.css" />
+	<script src="../../lib/rem.js"></script>
+	<script src="../../lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
+	<title>昌平区安居通</title>
+</head>
+<body>
+<div class="chooes">
+	<div class="fwhz fl">
+		<div class="marginTop active">
+			房屋/户主信息
+		</div>
+	</div>
+	<div class="zhong fl" style="width: 20%;text-align: center;">
+		<div class="box fl">
+
+		</div>
+	</div>
+
+	<div class="zhxx fl">
+		<div class="marginTop">
+			租户信息
+		</div>
+	</div>
+</div>
+<div class="contentCard">
+	<div class="itemXx hide">
+		<div class="itemXxLeft fl">
+			房主姓名
+		</div>
+		<div class="itemXxRight fr">
+			刘大壮
+		</div>
+	</div>
+	<div class="itemXx hide">
+		<div class="itemXxLeft fl">
+			房主手机号
+		</div>
+		<div class="itemXxRight fr">
+			13298945454
+		</div>
+	</div>
+	<div class="itemXx hide">
+		<div class="itemXxLeft fl">
+			房主身份证号
+		</div>
+		<div class="itemXxRight fr">
+			150105199006020012
+		</div>
+	</div>
+	<div class="itemXx">
+		<div class="itemXxLeft fl">
+			房屋类型
+		</div>
+		<div class="itemXxRight fr">
+			楼房
+		</div>
+	</div>
+	<div class="itemXx">
+		<div class="itemXxLeft fl">
+			户型
+		</div>
+		<div class="itemXxRight fr">
+			两室一厅
+		</div>
+	</div>
+	<div class="itemXx">
+		<div class="itemXxLeft fl">
+			房屋所属派出所
+		</div>
+		<div class="itemXxRight fr">
+			昌平派出所
+		</div>
+	</div>
+	<!--<div class="itemXx">
+		<div class="itemXxLeft fl">
+			社区
+		</div>
+		<div class="itemXxRight fr">
+			一街社区
+		</div>
+	</div>-->
+	<div class="itemXx">
+		<div class="itemXxLeft fl">
+			房屋地址
+		</div>
+		<div class="itemXxRight fr">
+			北京市昌平区新悦家园小区9号楼
+		</div>
+	</div>
+</div>
+<div id="container" class="zhxxCard dis-none">
+	<div class="content">
+		<div class="zuhu-info">
+			<div class="top">
+				<div class="left">
+					<img src="../../lib/images/photo.png" alt="">
+				</div>
+				<ul class="right">
+					<li>
+						<span>姓名</span>
+						<span>张三</span>
+					</li>
+					<li>
+						<span>性别</span>
+						<span>男</span>
+					</li>
+					<li>
+						<span>身份证号</span>
+						<span>23540719510611274566</span>
+					</li>
+					<li>
+						<span>手机号</span>
+						<span>13298636547</span>
+					</li>
+				</ul>
+			</div>
+			<ul class="bottom">
+				<li class="show">
+					<i class="iconfont iconjiantouxia"></i>
+				</li>
+				<li class="is-show" style="height: 0.7rem;display: none;">
+					<span>户籍</span>
+					<span>江苏省无锡市惠山区前桥镇塘泗路39号</span>
+				</li>
+				<li class="is-show" style="display: none;">
+					<span>租住期限</span>
+					<span>2020年03月20日至2021年03月20日</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+	document.documentElement.style.fontSize = window.top.innerWidth / 7.5 + 'px';
+
+	var identity = localStorage.getItem("identity");
+	if(identity && identity === "1") {
+		$(".hide").hide()
+	}
+
+	$('.zhxx').on('click',function() {
+		$('.contentCard').hide();
+		$(this).children().addClass('active')
+		$(this).siblings().children().removeClass('active')
+		$('.zhxxCard').show();
+	})
+
+	$('.fwhz').on('click',function() {
+		$(this).children().addClass('active')
+		$(this).siblings().children().removeClass('active')
+		$('.contentCard').show();
+		$('.zhxxCard').hide();
+	})
+
+	$(".show").on("click", function () {
+		$(this).find("i").addClass("iconjiantoushang").removeClass("iconjiantouxia")
+		$(".is-show").show()
+	});
+</script>
+</html>

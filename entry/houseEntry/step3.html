@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/step3.css">
+    <script src="../../lib/jquery-3.4.1.min.js"></script>
+    <script src="../../lib/rolldate.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <div class="title">
+        <span>租户信息</span>
+    </div>
+    <div class="content">
+        <div class="zuhu-info">
+            <div class="top">
+                <div class="left">
+                    <img src="../../lib/images/photo.png" alt="">
+                </div>
+                <ul class="right">
+                    <li>
+                        <span>姓名</span>
+                        <span>张三</span>
+                    </li>
+                    <li>
+                        <span>性别</span>
+                        <span>男</span>
+                    </li>
+                    <li>
+                        <span>身份证号</span>
+                        <span>23540719510611274566</span>
+                    </li>
+                    <li>
+                        <span>手机号</span>
+                        <span>13298636547</span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="bottom">
+                <li class="show">
+                    <i class="iconfont iconjiantouxia"></i>
+                </li>
+                <li class="is-show" style="height: 0.7rem;display: none;">
+                    <span>户籍</span>
+                    <span>江苏省无锡市惠山区前桥镇塘泗路39号</span>
+                </li>
+                <li class="is-show" style="display: none;">
+                    <span>租住期限</span>
+                    <span>2020年03月20日至2021年03月20日</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--添加租户-->
+    <div class="add">
+        <div class="btn">
+            <i class="iconfont icontianjia"></i>
+            添加租户
+        </div>
+    </div>
+    <!--返回首页-->
+</div>
+<!--遮罩层-->
+<div id="mask">
+   <div class="mask-inner">
+       <div class="inner">
+           <!--关闭按钮-->
+           <div class="close">
+               <i class="iconfont iconguanbi"></i>
+           </div>
+           <!--拍摄身份证-->
+           <div id="id-card">
+               <div id="id-care-inner">
+                   <div class="title">拍摄/上传您的二代身份证</div>
+                   <div class="upload">
+                       <img id="img" src="../../lib/images/idCard.png" alt="">
+                       <input type="file" id="upLoad-idCard">
+                   </div>
+                   <p class="tips">身份证翻拍提示：请使用手机拍摄身份证正面照片，<span>拍摄时请将身份证放置在纯白色背景上，保持手机与身份证平行</span>，尽量减少拍摄背景。</p>
+                   <button id="next">下一步</button>
+               </div>
+           </div>
+
+           <!--填写租户信息-->
+           <div id="zuhu-info" style="display: none;">
+               <ul id="form">
+                   <li class="form-item no-require">
+                       <label>
+                           <span>姓名</span>
+                           <div class="right">
+                               <input type="text" readonly value="张三">
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item no-require">
+                       <label>
+                           <span>身份证号</span>
+                           <div class="right">
+                               <input type="text" readonly value="23540719510611274566">
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item no-require">
+                       <label>
+                           <span>户籍地址</span>
+                           <div class="right">
+                               <input type="text" readonly value="江苏省无锡市惠山区前桥镇塘泗路39号">
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item no-require">
+                       <label>
+                           <span>民族</span>
+                           <div class="right">
+                               <input type="text" readonly value="汉">
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item no-require">
+                       <label>
+                           <span>性别</span>
+                           <div class="right">
+                               <input type="text" readonly value="男">
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item require hide">
+                       <label>
+                           <span><i class="iconfont iconxinghao"></i>手机号</span>
+                           <div class="right">
+                               <input type="text" value="" placeholder="请输入">
+                               <i class="iconfont iconarrow-right-copy-copy"></i>
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item require hide">
+                       <label>
+                           <span><i class="iconfont iconxinghao"></i>租住开始日期</span>
+                           <div class="right">
+                               <input id="zzksrq" type="text" readonly value="" placeholder="请选择">
+                               <i class="iconfont iconarrow-right-copy-copy"></i>
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item require hide">
+                       <label>
+                           <span><i class="iconfont iconxinghao"></i>租住结束日期</span>
+                           <div class="right">
+                               <input id="zzjsrq" type="text" value="" readonly placeholder="请选择">
+                               <i class="iconfont iconarrow-right-copy-copy"></i>
+                           </div>
+                       </label>
+                   </li>
+                   <li class="form-item require" style="border-bottom: none;">
+                       <label>
+                           <span><i class="iconfont iconxinghao"></i>合同照片</span>
+                           <div class="right"></div>
+                       </label>
+                   </li>
+
+                   <li class="form-item no-require zp">
+                       <label>
+                           <span></span>
+                           <div class="upload right">
+                               <img id="add" src="../../lib/images/addPhoto.png" alt="">
+                               <input type="file" id="add-photo">
+                           </div>
+                       </label>
+                   </li>
+
+                   <li class="form-item require" style="border-bottom: none;">
+                       <label>
+                           <span><i class="iconfont iconxinghao"></i>人脸照片</span>
+                           <div class="right"></div>
+                       </label>
+                   </li>
+
+                   <li class="form-item no-require zp">
+                       <label>
+                           <span></span>
+                           <div class="upload right" style="text-align: left;">
+                               <img src="../../lib/images/photo.png" alt="">
+                           </div>
+                       </label>
+                   </li>
+               </ul>
+               <!--保存-->
+               <div id="save">
+                   <button>保存</button>
+               </div>
+           </div>
+
+       </div>
+   </div>
+
+</div>
+
+<script>
+    $(function () {
+        document.documentElement.style.fontSize = window.top.innerWidth / 7.5 + 'px';
+        $(".show").on("click", function () {
+            $(this).find("i").addClass("iconjiantoushang").removeClass("iconjiantouxia")
+            $(".is-show").show()
+        });
+
+        //拍摄租户身份证
+        $("#upLoad-idCard").on("change", function () {
+            var reads= new FileReader();
+            var f=$(this)[0].files[0];
+            reads.readAsDataURL(f);
+            reads.onloadend=function () {
+                document.getElementById('img').src=reads.result;
+            };
+        });
+
+        $("#add-photo").on("change", function () {
+            var reads= new FileReader();
+            var f=$(this)[0].files[0];
+            reads.readAsDataURL(f);
+            reads.onloadend=function () {
+                document.getElementById('add').src=reads.result;
+            };
+        });
+
+        new Rolldate({
+            el: '#zzksrq',
+            format: 'YYYY-MM-DD',
+            beginYear: 2000,
+            endYear: 2100
+        });
+        new Rolldate({
+            el: '#zzjsrq',
+            format: 'YYYY-MM-DD',
+            beginYear: 2000,
+            endYear: 2100
+        });
+
+
+        $(".btn").on("click", function () {
+           $("#mask").show()
+        });
+        $("#next").on("click", function () {
+            $("#id-card").hide();
+            $("#zuhu-info").show()
+        });
+        $("#save button").on("click", function () {
+            $("#mask").hide();
+            $("#id-card").show();
+            $("#zuhu-info").hide();
+        });
+        $(".close").on("click", function () {
+            $("#id-card").show();
+            $("#zuhu-info").hide();
+            $("#mask").hide()
+        })
+
+
+    })
+</script>
+</body>
+</html>

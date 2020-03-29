@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../../lib/mobileSelect/mobileSelect.css">
+    <link rel="stylesheet" href="./css/step2.css">
+    <script src="../../lib/jquery-3.4.1.min.js"></script>
+    <script src="../../lib/mobileSelect/mobileSelect.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <div class="title">
+        <span>房屋/户主信息</span>
+    </div>
+    <ul id="form">
+        <li class="form-item require hide" style="padding-right: 0.5rem;">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>房主姓名</span>
+                <div class="right">
+                    <input type="text" readonly value="张三" style="color: #e5e5e5;">
+                </div>
+            </label>
+        </li>
+        <li class="form-item require hide" style="padding-right: 0.5rem;">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>房主身份证号</span>
+                <div class="right">
+                    <input type="text" readonly value="13010219630325045954" style="color: #e5e5e5;">
+                </div>
+            </label>
+        </li>
+        <li class="form-item require hide">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>房主手机号</span>
+                <div class="right">
+                    <input type="text" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+
+        <!--房屋类型-->
+        <li class="form-item require" style="border-bottom: none;">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>房屋类型</span>
+                <div class="right"></div>
+            </label>
+        </li>
+        <li class="form-item require">
+            <label>
+                <span></span>
+                <div class="right choose-house">
+                    <span class="checked">楼房</span>
+                    <span>自建房</span>
+                </div>
+            </label>
+        </li>
+
+        <li class="form-item require hx">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>户型</span>
+                <div class="right">
+                    <input id="hx" type="text" value="" placeholder="请选择" readonly>
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require fjs" style="display: none;">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>房间数</span>
+                <div class="right">
+                    <input type="text" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+
+        <li class="form-item require">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>房屋所属派出所</span>
+                <div class="right">
+                    <input id="fwsspcs" type="text" value="" placeholder="请选择" readonly>
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+
+        <li class="form-item require">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>社区</span>
+                <div class="right">
+                    <input id="sq" type="text" value="" placeholder="请选择" readonly>
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+        <li class="form-item require" style="padding-right: 0.5rem;">
+            <label>
+                <span></span>
+                <div class="right">
+                    <input id="shsq" type="text" value="" placeholder="请选择社区" readonly>
+                </div>
+            </label>
+        </li>
+
+        <li class="form-item require">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>房屋地址 <b style="font-weight: normal;">北京市昌平区</b> </span>
+                <div class="right" style="width: 50%;">
+                    <input style="width: 80%;" id="fwdz" type="text" value="" readonly placeholder="请选择">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+
+    </ul>
+    <div class="sub">
+        <button id="next">保存并进行下一步</button>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        document.documentElement.style.fontSize = window.top.innerWidth / 7.5 + 'px';
+
+        var identity = localStorage.getItem("identity");
+        if(identity && identity === "1") { //房东
+            $(".hide").hide()
+        }else if(identity && identity === "2") {
+            $(".hide").show();
+        }
+
+
+        //房屋类型的选择
+        $(".choose-house span").on("click", function () {
+            $(this).addClass("checked").siblings().removeClass("checked");
+            var index = $(this).index();
+            if (index === 0) {
+                $(".fjs").hide();
+                $(".hx").show()
+            } else if (index === 1) {
+                $(".hx").hide();
+                $(".fjs").show()
+            }
+        })
+        //所有的选择框
+        new MobileSelect({
+            trigger: "#hx",
+            wheels: [{
+                data: ["一室一厅", "两室一厅", "两室两厅", "三室一厅", "三室两厅", "三室三厅", "四室一厅", "四室两厅", "四是三厅", "五室两厅", "五室三厅", "五室四厅"]
+            }],
+            position: [0],
+            callback: function (index, data) {
+                $("#hx").val(data[0]);
+            }
+        });
+        new MobileSelect({
+            trigger: "#fwsspcs",
+            wheels: [{
+                data: ["昌平派出所", "七里渠派出所", "史各庄派出所", "东小口派出所", "南邵派出所", "龙园派出所"]
+            }],
+            position: [0],
+            callback: function (index, data) {
+                $("#fwsspcs").val(data[0]);
+            }
+        });
+        new MobileSelect({
+            trigger: "#sq",
+            wheels: [{
+                data: ["一街社区", "二街社区", "三街社区", "五街社区", "东关社区"]
+            }],
+            position: [0],
+            callback: function (index, data) {
+                $("#sq").val(data[0]);
+                if(index[0] === 0) {
+                    $("#shsq").val("一街社区")
+                }else if(index[0] === 1) {
+                    $("#shsq").val("二街社区")
+                }else if(index[0] === 2) {
+                    $("#shsq").val("三街社区")
+                }else if(index[0] === 3) {
+                    $("#shsq").val("五街社区")
+                }else if(index[0] === 4) {
+                    $("#shsq").val("东关社区")
+                }
+            }
+        })
+
+        new MobileSelect({
+            trigger: "#fwdz",
+            wheels: [
+                {data: ["新悦家园小区"]},
+                {data: ["9号楼"]},
+                {data: ["2单元101号", "2单元102号", "2单元103号"]},
+            ],
+            position: [0, 0, 0],
+            callback: function (index, data) {
+                var html = "";
+                for (var i = 0; i < data.length; i ++) {
+                    html += data[i]
+                }
+                $("#fwdz").val(html)
+            }
+        })
+
+        $("#next").on("click", function () {
+            window.location.href = "./step3.html"
+        })
+
+
+
+    })
+</script>
+</body>
+</html>

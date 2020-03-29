@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../../../lib/css/reset.css">
+    <link rel="stylesheet" href="../../../lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../../../lib/mobileSelect/mobileSelect.css">
+    <link rel="stylesheet" href="../../../out/css/step3.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script src="../../../lib/rem.js"></script>
+    <script src="../../../lib/jquery-3.4.1.min.js"></script>
+    <script src="../../../lib/mobileSelect/mobileSelect.min.js"></script>
+    <script src="../js/popups.js"></script>
+</head>
+<body>
+<div id="container">
+    <ul id="form">
+        <li class="form-item no-require">
+            <label>
+                <span>姓名</span>
+                <div class="right">
+                    <input type="text" readonly value="张三">
+                </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>性别</span>
+                <div class="right">
+                    <input type="text" readonly value="男">
+                </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>民族</span>
+                <div class="right">
+                    <input type="text" readonly value="汉">
+                </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>身份证号</span>
+                <div class="right">
+                    <input type="text" readonly value="13010219630325045954">
+                </div>
+            </label>
+        </li>
+        <li class="form-item no-require">
+            <label>
+                <span>户籍地址</span>
+                <div class="right">
+                    <input type="text" readonly value="江苏省无锡市惠山区前桥镇塘泗路39号">
+                </div>
+            </label>
+        </li>
+
+        <li class="form-item require">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>手机号</span>
+                <div class="right">
+                    <input type="text" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+
+        <li class="form-item require">
+            <label>
+                <span><i class="iconfont iconxinghao"></i>密码</span>
+                <div class="right">
+                    <input type="password" value="" placeholder="请输入">
+                    <i class="iconfont iconarrow-right-copy-copy"></i>
+                </div>
+            </label>
+        </li>
+
+    </ul>
+    <button id="next">提交</button>
+</div>
+<script>
+    $(function () {
+        document.documentElement.style.fontSize = window.top.innerWidth / 7.5 + 'px';
+        $("#next").on("click", function (e) {
+            e.stopPropagation();
+            jqalert({
+                title: '变更成功!',
+                content: '',
+                yestext: '确定',
+                notext: false,
+                yesfn: function () {
+                    localStorage.removeItem("identity");
+                    window.top.location.href = "../../../index.html"
+                },
+                nofn: function () {
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+#html, body {
+  width: 100%;
+  #container {
+    background-color: #f6f6f6;
+    text-align: center;
+    .title {
+      width: 100%;
+      height: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      margin-bottom: 0.1rem;
+      span {
+        display: inline-block;
+        width: 3.72rem;
+        height: 0.8rem;
+        border-radius: 0.15rem;
+        background-color: #376fe1;
+        text-align: center;
+        line-height: 0.8rem;
+        color: #ffffff;
+      }
+    }
+    #form {
+      width: 100%;
+      background-color: #ffffff;
+      .form-item {
+        height: 1.4rem;
+        border-bottom: 1px solid #cccccc;
+        width: 100%;
+        box-sizing: border-box;
+        label {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 0.3rem;
+          span {
+            color: #666666;
+          }
+          .right {
+            width: 60%;
+            text-align: right;
+            input {
+              color: #e5e5e5;
+              text-align: right;
+              font-size: 0.3rem;
+            }
+            &.choose-house {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              width: 100%;
+              span {
+                display: inline-block;
+                width: 1.78rem;
+                height: 0.74rem;
+                text-align: center;
+                line-height: 0.74rem;
+                box-sizing: border-box;
+                border: 1px solid #cccccc;
+                border-radius: 0.1rem;
+                color: #cccccc;
+                &:nth-child(2) {
+                  margin-left: 0.2rem;
+                }
+                &.checked {
+                  border: 1px solid #376fe1;
+                  color: #376fe1;
+                }
+              }
+            }
+          }
+        }
+        &.no-require {
+          padding: 0 0.5rem;
+        }
+        &.require {
+          padding-left: 0.3rem;
+          padding-right: 0.2rem;
+          .iconfont {
+            font-size: 0.16rem;
+            color: red;
+            vertical-align: middle;
+          }
+          .right {
+            .iconfont {
+              font-size: 0.3rem;
+              color: #e5e5e5;
+              vertical-align: middle;
+            }
+            input {
+              color: #000000;
+            }
+          }
+        }
+      }
+    }
+    .sub {
+      width: 100%;
+      background-color: #fff;
+      #next {
+        height: 1.2rem;
+        width: 5rem;
+        border-radius: 0.55rem;
+        background: linear-gradient(to right, #1c6feb, #5b99f5);
+        font-size: 0.34rem;
+        color: #ffffff;
+        margin: 0.2rem 0;
+      }
+    }
+  }
+}

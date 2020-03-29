@@ -1,0 +1,100 @@
+html,
+body {
+  width: 100%;
+}
+html #container,
+body #container {
+  width: 100%;
+  text-align: center;
+}
+html #container #form,
+body #container #form {
+  width: 100%;
+}
+html #container #form .title,
+body #container #form .title {
+  font-size: 0.38rem;
+  color: #fe554b;
+  font-weight: 700;
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+  text-align: left;
+}
+html #container #form .form-item,
+body #container #form .form-item {
+  height: 1.4rem;
+  border-bottom: 1px solid #cccccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+html #container #form .form-item label,
+body #container #form .form-item label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.3rem;
+}
+html #container #form .form-item label span,
+body #container #form .form-item label span {
+  color: #666666;
+}
+html #container #form .form-item label .right,
+body #container #form .form-item label .right {
+  width: 60%;
+  text-align: right;
+}
+html #container #form .form-item label .right input,
+body #container #form .form-item label .right input {
+  color: #e5e5e5;
+  text-align: right;
+  font-size: 0.3rem;
+}
+html #container #form .form-item.no-require,
+body #container #form .form-item.no-require {
+  padding: 0 0.5rem;
+}
+html #container #form .form-item.require,
+body #container #form .form-item.require {
+  padding-left: 0.3rem;
+  padding-right: 0.2rem;
+}
+html #container #form .form-item.require .iconfont,
+body #container #form .form-item.require .iconfont {
+  font-size: 0.16rem;
+  color: red;
+  vertical-align: middle;
+}
+html #container #form .form-item.require .right .iconfont,
+body #container #form .form-item.require .right .iconfont {
+  font-size: 0.3rem;
+  color: #e5e5e5;
+  vertical-align: middle;
+}
+html #container #form .form-item.require .right input,
+body #container #form .form-item.require .right input {
+  color: #000000;
+}
+html #container .tips,
+body #container .tips {
+  font-size: 0.28rem;
+  text-align: center;
+  margin: 0.2rem 0;
+}
+html #container .tips span,
+body #container .tips span {
+  color: #3071e3;
+  cursor: pointer;
+}
+html #container #next,
+body #container #next {
+  height: 1.2rem;
+  width: 5rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(to right, #1c6feb, #5b99f5);
+  font-size: 0.34rem;
+  color: #ffffff;
+  margin: 0.2rem 0;
+}
+/*# sourceMappingURL=step3.css.map */

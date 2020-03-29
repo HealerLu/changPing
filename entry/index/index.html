@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../lib/css/reset.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="../../lib/iconfont/iconfont.css">
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	<script src="../../lib/rem.js"></script>
+	<script src="../../lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
+	<script src="./js/popups.js"></script>
+	<title>昌平区安居通</title>
+	<style>
+		.swiper-container,.swiper-wrapper{
+			width: 100%;
+			height: 100%;
+		}
+		.swiper-slide{
+			width: 100%;
+			height: 3.8rem;
+		}
+		.swiper-slide img{
+			width: 100%;
+			height: 100%;
+			border-radius: 20px;
+		}
+	</style>
+</head>
+<body>
+<div class="sousuo">
+	<div class="shouImg fl">
+
+	</div>
+	<input class="ipt fl" type="text" placeholder="搜索房主姓名或房屋地址"/>
+</div>
+<div class="banner">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="../../lib/images/swiper-1.png" alt="" /></div>
+			<div class="swiper-slide"><img src="../../lib/images/swiper-1.png" alt="" /></div>
+			<div class="swiper-slide"><img src="../../lib/images/swiper-1.png" alt="" /></div>
+
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</div>
+<div class="nav">
+	<div class="laba fl">
+		<img src="../../lib/images/home-tips.png" />
+	</div>
+	<div class="nav-words fl">
+		共采集房屋<span class="orangeWords">3</span>间，租户<span class="orangeWords">3</span>人
+	</div>
+</div>
+<div class="item">
+	<div class="itemImg fl">
+
+	</div>
+	<div class="itemWords fl">
+		<div class="titleWords">
+			北京市昌平区新悦家园小区9号楼2单元101号
+		</div>
+		<div class="cardWords">
+			租户人数: 1
+		</div>
+		<div class="cardWords">
+			房主姓名:名刘大壮
+		</div>
+		<div class="cardWords">
+			房主电话:13238345454
+		</div>
+	</div>
+	<div class="btn1">
+
+	</div>
+	<div class="btn2">
+
+	</div>
+</div>
+<div class="item">
+	<div class="itemImg fl">
+
+	</div>
+	<div class="itemWords fl">
+		<div class="titleWords">
+			北京市昌平区新悦家园小区9号楼2单元102号
+		</div>
+		<div class="cardWords">
+			租户人数: 1
+		</div>
+		<div class="cardWords">
+			房主姓名:刘桂贤
+		</div>
+		<div class="cardWords">
+			房主电话:1515151515
+		</div>
+	</div>
+	<div class="btn1">
+
+	</div>
+	<div class="btn2">
+
+	</div>
+</div>
+<div class="item">
+	<div class="itemImg fl">
+
+	</div>
+	<div class="itemWords fl">
+		<div class="titleWords">
+			北京市昌平区新悦家园小区9号楼2单元102号
+		</div>
+		<div class="cardWords">
+			租户人数: 1
+		</div>
+		<div class="cardWords">
+			房主姓名:潘双全
+		</div>
+		<div class="cardWords">
+			房主电话:13235648545
+		</div>
+	</div>
+	<div class="btn1">
+
+	</div>
+	<div class="btn2">
+
+	</div>
+</div>
+</body>
+<script language="javascript">
+	$(function(){
+		document.documentElement.style.fontSize = window.top.innerWidth / 7.5 + 'px';
+		var mySwiper = new Swiper('.swiper-container',{
+			slidesPerView: "auto",
+			pagination : '.swiper-pagination',
+			//pagination : '#swiper-pagination1',
+		})
+
+		$('input').bind('input propertychange', function(){
+			var val = $(this).val()
+
+			if(val == "南"){
+				$(".sousuo").css("border","1px solid gray")
+				$("html").css("background","white")
+				$("body").css("background","white")
+				$(".nav").css("display","none")
+				$(".banner").css("display","none")
+			}else{
+				$(".sousuo").css("border","none")
+				$("html").css("background","#f7f7f7")
+				$("body").css("background","#f7f7f7")
+				$(".nav").css("display","block")
+				$(".banner").css("display","block")
+			}
+		})
+		$(".item").on("click",function(){
+			window.location.href = "./detal.html";
+		})
+		$(".btn1").on("click",function(e){
+			e.stopPropagation();
+			window.location.href = "./fwbj.html";
+		})
+		$(".btn2").on("click",function(e){
+			e.stopPropagation();
+			jqalert({
+				title:'确定注销改房屋吗？',
+				content:'注销房屋的同时会将房屋下的租户同时注销。',
+				yestext:'确定',
+				notext:'取消',
+				yesfn:function () {
+					// jqtoast('提交成功');
+				},
+				nofn:function () {
+					// jqtoast('你点击了取消');
+				}
+			})
+
+
+		})
+
+	})
+
+
+</script>
+</html>

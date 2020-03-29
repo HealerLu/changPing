@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../lib/css/reset.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="../../lib/iconfont/iconfont.css">
+	<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+	<link rel="stylesheet" href="../../lib/mobileSelect/mobileSelect.css" />
+	<link rel="stylesheet" href="../houseEntry/css/step3.css" />
+	<script src="../../lib/rem.js"></script>
+	<script src="../../lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
+	<script src="../../lib/mobileSelect/mobileSelect.min.js"></script>
+	<title>房屋编辑</title>
+</head>
+<body>
+<div class="chooes" >
+	<div class="fwhz fl">
+		<div class="marginTop active">
+			房屋/户主信息
+		</div>
+	</div>
+	<div class="zhong fl" style="width: 20%;text-align: center;">
+		<div class="box fl">
+
+		</div>
+	</div>
+
+	<div class="zhxx fl">
+		<div class="marginTop">
+			租户信息
+		</div>
+	</div>
+</div>
+<div class="contentCard">
+	<div class="itemXx fzInfos">
+		<div class="fl itemXxLeft hide">
+			<span class="xing"><img src="img/xing_03.png" alt="" /></span>
+			房主姓名
+		</div>
+		<div class="noGai fr">
+			刘大壮  <span class="icon iconfont iconarrow-right-copy-copy"></span>
+		</div>
+	</div>
+	<div class="itemXx fzInfos hide">
+		<div class="itemXxLeft fl">
+			<span class="xing"><img src="img/xing_03.png" alt="" /></span>
+			房主手机号
+		</div>
+		<div class="noGai fr">
+			13298945454  <span class="icon iconfont iconarrow-right-copy-copy"></span>
+		</div>
+	</div>
+	<div class="itemXx fzInfos hide">
+		<div class="itemXxLeft fl">
+			<span class="xing"><img src="img/xing_03.png" alt="" /></span>
+			房主身份证号
+		</div>
+		<div class="noGai fr">
+			150105199006020012  <span class="icon iconfont iconarrow-right-copy-copy"></span>
+		</div>
+	</div>
+	<div class="fwlx">
+		<div style="line-height: 1.3rem;" class="itemXxLeft">
+			<span class="xing"><img src="img/xing_03.png" alt="" /></span>
+			房屋类型
+		</div>
+		<div style="overflow: hidden;" id="fwlx">
+			<div class="loufang fangActiv fl">
+				楼房
+			</div>
+			<div class="zijianfang fl">
+				自建房
+			</div>
+		</div>
+
+	</div>
+
+	<div class="itemXx " id="hx-label">
+		<div class="itemXxLeft">
+			<span class="xing fl"><img src="img/xing_03.png" alt="" />户型</span>
+
+			<div class="fr">
+				<input id="hx" class="hx-input" type="text" readonly placeholder="请选择">
+				<span class="icon iconfont iconarrow-right-copy-copy"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="itemXx dis-none" id="fjs-label">
+		<div class="itemXxLeft">
+			<span class="xing fl"><img src="img/xing_03.png" alt="" />房间数</span>
+
+			<div class="fr">
+				<input class="hx-input" type="text" placeholder="未填写">
+				<span class="icon iconfont iconarrow-right-copy-copy"></span>
+			</div>
+		</div>
+	</div>
+	<div class="itemXx">
+		<div class="itemXxLeft">
+			<span class="xing fl"><img src="img/xing_03.png" alt="" />房屋所属派出所</span>
+
+			<div class="fr">
+				<input id="ffsspcs" class="hx-input" style="width: 2rem;" type="text" readonly placeholder="请选择">
+				<span class="icon iconfont iconarrow-right-copy-copy"></span>
+			</div>
+		</div>
+	</div>
+	<div class="itemXx">
+		<div class="itemXxLeft">
+			<span class="xing fl"><img src="img/xing_03.png" alt="" />社区</span>
+			<div class="fr">
+				<input id="sq" class="hx-input" type="text" readonly placeholder="请选择">
+				<span class="icon iconfont iconarrow-right-copy-copy"></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="itemXx">
+		<div class="itemXxLeft">
+			<div class="fr">
+				<input id="shsq" class="hx-input" type="text" readonly placeholder="请选择社区">
+				<span class="icon iconfont iconarrow-right-copy-copy"></span>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="itemXx">
+		<div class="itemXxLeft">
+			<span class="xing fl"><img src="img/xing_03.png" alt="" />房屋地址</span>
+			<div class="fr">
+				<input id="ffdz" class="hx-input" type="text" readonly placeholder="请选择">
+				<span class="icon iconfont iconarrow-right-copy-copy"></span>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="itemXx">
+        <div class="itemXxLeft">
+            <span class="xing fl"><img src="img/xing_03.png" alt="" />房屋详细地址</span>
+            <div class="fr">
+                <input id="ffdz" class="hx-input" type="text" placeholder="请填写">
+                <span class="icon iconfont iconarrow-right-copy-copy"></span>
+            </div>
+        </div>
+    </div>-->
+
+	<div style="width: 100%;margin-left: 0;" class="fwhz fl" id="saveChange">
+		<div style="margin: 0.5rem auto 0.5rem;" class="marginTop active">
+			保存
+		</div>
+	</div>
+</div>
+<div id="container" class="zhxxCard dis-none">
+	<div class="content">
+		<div class="zuhu-info">
+			<div class="top">
+				<div class="left">
+					<img src="../../lib/images/photo.png" alt="">
+				</div>
+				<ul class="right">
+					<li>
+						<span>姓名</span>
+						<span>张三</span>
+					</li>
+					<li>
+						<span>性别</span>
+						<span>男</span>
+					</li>
+					<li>
+						<span>身份证号</span>
+						<span>23540719510611274566</span>
+					</li>
+					<li>
+						<span>手机号</span>
+						<span>13298636547</span>
+					</li>
+				</ul>
+			</div>
+			<ul class="bottom">
+				<li class="show">
+					<i class="iconfont iconjiantouxia"></i>
+				</li>
+				<li class="is-show" style="height: 0.7rem;display: none;">
+					<span>户籍</span>
+					<span>江苏省无锡市惠山区前桥镇塘泗路39号</span>
+				</li>
+				<li class="is-show" style="display: none;">
+					<span>租住期限</span>
+					<span>2020年03月20日至2021年03月20日</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="marginTop active" style="margin: 0 auto; margin-top: 20px;text-align: center;" id="add-zh">
+		<span class="icon iconfont icontianjia"></span>
+		添加租户
+	</div>
+</div>
+<div id="mask">
+	<div class="mask-inner">
+		<div class="inner">
+			<!--关闭按钮-->
+			<div class="close">
+				<i class="iconfont iconguanbi"></i>
+			</div>
+			<!--拍摄身份证-->
+			<div id="id-card">
+				<div id="id-care-inner">
+					<div class="title">拍摄/上传您的二代身份证</div>
+					<div class="upload">
+						<img id="img" src="../../lib/images/idCard.png" alt="">
+						<input type="file" id="upLoad-idCard">
+					</div>
+					<p class="tips">身份证翻拍提示：请使用手机拍摄身份证正面照片，<span>拍摄时请将身份证放置在纯白色背景上，保持手机与身份证平行</span>，尽量减少拍摄背景。</p>
+					<button id="next">下一步</button>
+				</div>
+			</div>
+
+			<!--填写租户信息-->
+			<div id="zuhu-info" style="display: none;">
+				<ul id="form">
+					<li class="form-item no-require">
+						<label>
+							<span>姓名</span>
+							<div class="right">
+								<input type="text" readonly value="张三">
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item no-require">
+						<label>
+							<span>身份证号</span>
+							<div class="right">
+								<input type="text" readonly value="23540719510611274566">
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item no-require">
+						<label>
+							<span>户籍地址</span>
+							<div class="right">
+								<input type="text" readonly value="江苏省无锡市惠山区前桥镇塘泗路39号">
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item no-require">
+						<label>
+							<span>民族</span>
+							<div class="right">
+								<input type="text" readonly value="汉">
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item no-require">
+						<label>
+							<span>性别</span>
+							<div class="right">
+								<input type="text" readonly value="男">
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item require hide">
+						<label>
+							<span><i class="iconfont iconxinghao"></i>手机号</span>
+							<div class="right">
+								<input type="text" value="" placeholder="请输入">
+								<i class="iconfont iconarrow-right-copy-copy"></i>
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item require hide">
+						<label>
+							<span><i class="iconfont iconxinghao"></i>租住开始日期</span>
+							<div class="right">
+								<input id="zzksrq" type="text" readonly value="" placeholder="请选择">
+								<i class="iconfont iconarrow-right-copy-copy"></i>
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item require hide">
+						<label>
+							<span><i class="iconfont iconxinghao"></i>租住结束日期</span>
+							<div class="right">
+								<input id="zzjsrq" type="text" value="" readonly placeholder="请选择">
+								<i class="iconfont iconarrow-right-copy-copy"></i>
+							</div>
+						</label>
+					</li>
+					<li class="form-item require" style="border-bottom: none;">
+						<label>
+							<span><i class="iconfont iconxinghao"></i>合同照片</span>
+							<div class="right"></div>
+						</label>
+					</li>
+
+					<li class="form-item no-require zp">
+						<label>
+							<span></span>
+							<div class="upload right">
+								<img id="add" src="../../lib/images/addPhoto.png" alt="">
+								<input type="file" id="add-photo">
+							</div>
+						</label>
+					</li>
+
+					<li class="form-item require" style="border-bottom: none;">
+						<label>
+							<span><i class="iconfont iconxinghao"></i>人脸照片</span>
+							<div class="right"></div>
+						</label>
+					</li>
+
+					<li class="form-item no-require zp">
+						<label>
+							<span></span>
+							<div class="upload right" style="text-align: left;">
+								<img src="../../lib/images/photo.png" alt="">
+							</div>
+						</label>
+					</li>
+				</ul>
+				<!--保存-->
+				<div id="save">
+					<button>保存</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+</body>
+<script>
+	document.documentElement.style.fontSize = window.top.innerWidth / 7.5 + 'px';
+
+	$(function() {
+
+		$(".show").on("click", function () {
+			$(this).find("i").addClass("iconjiantoushang").removeClass("iconjiantouxia")
+			$(".is-show").show()
+		});
+
+		var identity = localStorage.getItem('identity');
+		if(identity == '1') {
+			$('.fzInfos').hide()
+		}else if(identity == '2') {
+			$('.fzInfos').show()
+		}
+
+		$('.zhxx').on('click',function() {
+			$('.contentCard').hide();
+			$(this).children().addClass('active')
+			$(this).siblings().children().removeClass('active')
+			$('.zhxxCard').show();
+		})
+
+		$('.fwhz').on('click',function() {
+			$(this).children().addClass('active')
+			$(this).siblings().children().removeClass('active')
+			$('.contentCard').show();
+			$('.zhxxCard').hide();
+		})
+
+		$('#fwlx div').on('click',function() {
+			$(this).addClass('fangActiv').siblings().removeClass('fangActiv')
+			if($(this)[0].innerText == '楼房') {
+				$('#hx-label').show();
+				$('#fjs-label').hide();
+			}else if($(this)[0].innerText == '自建房') {
+				$('#hx-label').hide();
+				$('#fjs-label').show();
+			}
+		})
+
+		//户型
+		new MobileSelect({
+			trigger: "#hx",
+			wheels: [{
+				data: ["一室一厅", "两室一厅", "两室两厅", "三室一厅", "三室两厅", "三室三厅", "四室一厅", "四室两厅", "四是三厅", "五室两厅", "五室三厅", "五室四厅"]
+			}],
+			position: [0],
+			callback: function (index, data) {
+				$("#hx").val(data[0]);
+			}
+		});
+
+		// 房屋所属派出所
+		new MobileSelect({
+			trigger: "#ffsspcs",
+			wheels: [{
+				data: ["昌平派出所", "七里渠派出所", "史各庄派出所", "东小口派出所", "南邵派出所", "龙园派出所"]
+			}],
+			position: [0],
+			callback: function (index, data) {
+				$("#ffsspcs").val(data[0]);
+			}
+		});
+
+		// 房屋所属派出所
+		new MobileSelect({
+			trigger: "#sq",
+			wheels: [{
+				data: ["一街社区", "二街社区", "三街社区", "五街社区", "东关社区"]
+			}],
+			position: [0],
+			callback: function (index, data) {
+				$("#sq").val(data[0]);
+				if(index[0] === 0) {
+					$("#shsq").val("一街社区")
+				}else if(index[0] === 1) {
+					$("#shsq").val("二街社区")
+				}else if(index[0] === 2) {
+					$("#shsq").val("三街社区")
+				}else if(index[0] === 3) {
+					$("#shsq").val("五街社区")
+				}else if(index[0] === 4) {
+					$("#shsq").val("东关社区")
+				}
+			}
+		})
+
+		new MobileSelect({
+			trigger: "#ffdz",
+			wheels: [
+				{data: ["新悦家园小区"]},
+				{data: ["9号楼"]},
+				{data: ["2单元101号", "2单元102号", "2单元103号"]},
+			],
+			position: [0, 0, 0],
+			callback: function (index, data) {
+				var html = "";
+				for (var i = 0; i < data.length; i ++) {
+					html += data[i]
+				}
+				$("#ffdz").val(html)
+			}
+		})
+
+		$("#saveChange").on("click", function () {
+			window.location.href = "./index.html"
+		})
+
+		var identity = localStorage.getItem("identity");
+		if(identity && identity === "1") {
+			$(".hide").hide()
+		}
+
+		$("#add-zh").on("click", function () {
+			$("#mask").show()
+		});
+		$("#next").on("click", function () {
+			$("#id-card").hide();
+			$("#zuhu-info").show()
+		});
+		$("#save button").on("click", function () {
+			$("#mask").hide();
+			$("#id-card").show();
+			$("#zuhu-info").hide();
+		});
+		$(".close").on("click", function () {
+			$("#id-card").show();
+			$("#zuhu-info").hide();
+			$("#mask").hide()
+		})
+	})
+</script>
+</html>

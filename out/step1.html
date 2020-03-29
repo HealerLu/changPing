@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="../lib/css/reset.css">
+    <link rel="stylesheet" href="./css/step1.css">
+    <script src="../lib/rem.js"></script>
+    <script src="../lib/jquery-3.4.1.min.js"></script>
+    <title>中介注册</title>
+</head>
+<body>
+<div id="container">
+    <div class="title">拍摄/上传您的二代身份证</div>
+    <div class="upload">
+        <img id="img" src="../lib/images/idCard.png" alt="">
+        <input type="file" id="upLoad">
+    </div>
+    <p class="tips">身份证翻拍提示：请使用手机拍摄身份证正面照片，<span>拍摄时请将身份证放置在纯白色背景上，保持手机与身份证平行</span>，尽量减少拍摄背景。</p>
+    <button id="next">下一步</button>
+</div>
+
+<script>
+    $(function () {
+        var identity = localStorage.getItem("identity");
+        if(identity && identity === "1") {
+            document.title = "房东注册";
+        }else if(identity && identity === "2") {
+            document.title = "中介注册";
+        }
+        $("#next").on("click", function () {
+            if(identity && identity === "1") {
+                window.location.href = "./step2-1.html"
+            }else if(identity && identity === "2") {
+                window.location.href = "./step3.html"
+            }
+        });
+
+
+        $("#upLoad").on("change", function () {
+            var reads= new FileReader();
+            var f=$(this)[0].files[0];
+            reads.readAsDataURL(f);
+            reads.onloadend=function () {
+                document.getElementById('img').src=reads.result;
+            };
+        })
+    })
+</script>
+</body>
+</html>

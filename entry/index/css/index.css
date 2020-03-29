@@ -1,0 +1,284 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "微软雅黑";
+}
+html body{
+	background: #f7f7f7;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.dis-none {
+	display: none;
+}
+
+.dis-block {
+	display: block;
+}
+
+.sousuo{
+	background: white;
+	width: 7rem;
+	height: 0.8rem;
+	margin: 0.3rem auto;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.shouImg{
+	height: 0.8rem;
+	width: 1.27rem;
+	background: url(../img/sousuo_03.png) no-repeat center;
+}
+.ipt{
+	width: 4rem;
+	height: 0.8rem;
+	font-size: 0.3rem;
+	border: none;
+	outline: none;
+}
+.banner{
+	width: 90%;
+	height: 3.8rem;
+	margin: 0.1rem auto;
+	border-radius:20px ;
+	background-size:100% 100% ;
+}
+
+.nav{
+	width: 7rem;
+	height: 0.9rem;
+	background: white;
+	margin: 0.3rem auto;
+	line-height: 0.9rem;
+	color: #000000;
+}
+.laba img{
+	margin: 0.08rem 0.1rem 0.1rem 0.2rem;
+}
+.orangeWords{
+	color: #f2a614;
+	width: 6.8rem;
+	height: 2.6rem;
+}
+.item{
+	width: 7rem;
+	height: 3rem;
+	border-bottom: 1px solid #ccc;
+	margin:0.3rem auto ;
+	position: relative;
+	overflow: hidden;
+}
+.itemImg{
+	width: 3.18rem;
+	height: 2.3rem;
+	background: url(../../../lib/images/house.jpg) no-repeat center;
+	border-radius: 5px;
+}
+.titleWords{
+	margin-left: 10PX;
+	width: 3rem;
+	height: 0.44rem;
+	line-height: 0.44rem;
+	font-size: 0.2rem;
+	color: #000;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.cardWords{
+	width: 100%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+	font-size: 0.2rem;
+	margin-left:10px ;
+	color: #636363;
+}
+.btn1{
+	width: 1rem;
+	height: 0.4rem;
+	position: absolute;
+	top: 63px;
+	right: 0px;
+	background: url(../img/btn_03.gif) no-repeat center;
+	background-size:100% 100% ;
+}
+.btn2{
+	width: 1rem;
+	height: 0.4rem;
+	position: absolute;
+	top: 104px;
+	right: 0px;
+	background: url(../img/btn_06.png) no-repeat center;
+	background-size:100% 100% ;
+}
+.chooes{
+	width: 100%;
+	height: 1.2rem;
+	background: white;
+	/*line-height: 1.2rem;*/
+	margin-bottom: 0.08rem;
+}
+.box{
+	height: 0.4rem;
+	width: 0.06rem;
+	margin-top: 0.4rem;
+	background: #a4a4a4;
+}
+.fwhz{
+	width: 30%;
+	margin-left: 10%;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #000000;
+}
+.zhxx{
+	width: 30%;
+	margin-right: 10%;
+	text-align: center;
+	font-size: 0.3rem;
+	color: #000000;
+}
+.zhong{
+	/*flex 布局*/
+	display: flex;
+	/*实现垂直居中*/
+	align-items: center;
+	/*实现水平居中*/
+	justify-content: center;
+
+	text-align: justify;
+}
+.xing img{
+	width: 0.22rem;
+	height: 0.22rem;
+	display: inline-block;
+}
+.noGai{
+	color: #878787;
+}
+.marginTop{
+	margin-top: 0.16rem;
+	width: 2.5rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+
+}
+.active{
+	width: 2.5rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	background: #376de9;
+	color: white;
+
+	border-radius: 5px;
+}
+.itemXx{
+	height: 1.56rem;
+	width: 100%;
+	background: white;
+	line-height: 1.56rem;
+	border-bottom: 2px solid #c9c9c9;
+}
+.fwlx{
+	height: 2.5rem;
+	width: 100%;
+	background: white;
+	border-bottom: 2px solid #c9c9c9;
+}
+.loufang{
+	width: 2.5rem;
+	height: 0.85rem;
+	line-height: 0.85rem;
+	border:2px solid #d1d1d1 ;
+	margin-left: 0.6rem;
+	color: #d1d1d1  ;
+	text-align: center;
+	border-radius: 5px;
+}
+.zijianfang{
+	width: 2.5rem;
+	height: 0.85rem;
+	line-height: 0.85rem;
+	border:2px solid #d1d1d1 ;
+	margin-left: 0.6rem;
+	color: #d1d1d1  ;
+	text-align: center;
+	border-radius: 5px;
+}
+.fangActiv{
+	border: 2px solid #4262b5;
+	color: #4656a4;
+}
+.meBody{
+	width: 100%;
+	text-align: center;
+}
+.meName{
+	margin-top: 0.66rem;
+	font-size: 0.44rem;
+	color: #000000;
+	margin-bottom: 1.3rem;
+}
+.touxiang{
+	margin-top:1.2rem;
+	width: 1.58rem;
+	height: 1.58rem;
+	border-radius: 50%;
+}
+.itemXxLeft{
+	margin-left: 0.36rem;
+}
+.itemXxRight{
+	margin-right: 0.25rem;
+}
+.meItem{
+	height:1.36rem ;
+	line-height: 1.36rem;
+	width: 81%;
+	margin: 0 auto;
+	border-bottom:2px solid #c8c8c8 ;
+}
+.icon{
+	width: 0.36rem;
+	height: 0.4rem;
+
+	margin-top: 0.47rem;
+	margin-left: 0.1rem;
+	margin-right: 0.3rem;
+}
+.tijiao{
+	text-align: center;
+	width: 4.8rem;
+	height: 1.45rem;
+	line-height: 1.45rem;
+	background: #4075e5;
+	color: white;
+	margin: 1.2rem auto;
+	border-radius: 40px;
+	cursor: pointer;
+	font-size: 0.42rem;
+}
+.bgywyNav{
+
+}
+.blueTiao{
+	width: 0.l4rem;
+	height: 0.5rem;
+	background: #356ced;
+	margin-left: 0.4rem;
+	margin-top: 0.6rem;
+}
+
+.hx-input {
+	border: none;
+	text-align: right;
+	font-family: "微软雅黑";
+	font-size: 0.32rem;
+	background: #fff;
+	outline: none;
+}
+
