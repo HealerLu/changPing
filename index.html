@@ -16,7 +16,7 @@
         <li>
             <label>
                 <span><i class="iconfont iconshouji"></i>手机号</span>
-                <input id="userPhone" type="text" maxlength="11" value="13222222222">
+                <input id="userPhone" type="text" maxlength="11" value="13259751358">
             </label>
         </li>
         <li>
@@ -26,7 +26,7 @@
             </label>
         </li>
     </ul>
-    <button id="login">登陆</button>
+    <button id="login">登录</button>
     <div id="register">
         <span data-identity="1">房东注册</span>
         <span data-identity="2">中介注册</span>
@@ -55,7 +55,7 @@
         });
         $("#login").on("click", function () {
             var userPhone = $("#userPhone").val();
-            if(userPhone === "13222222222") {
+            if(userPhone === "13259751358") {
                 localStorage.setItem("identity", "1");
                 window.location.href = "./entry/index.html"
             }else {
